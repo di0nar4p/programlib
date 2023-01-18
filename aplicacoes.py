@@ -17,6 +17,5 @@ def acesso(user, senha):
     if user == login and senha == password:
         return 'Seja bem vindo'
     else:
-        return 'Login ou senha inválidos'
-        
+        return 'Login ou senha inválidos'    
 
