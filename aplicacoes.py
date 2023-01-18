@@ -11,3 +11,10 @@ def par_impar(n):
     else:
         return 'Número ímpar'
 
+def acesso(user, senha):
+    login = 'glauco'
+    password = '123'
+    if user == login and senha == password:
+        return 'Seja bem vindo'
+    else:
+        return 'Login ou senha inválidos'

@@ -1,25 +1,26 @@
-from flask import Flask, render_template
-from home import home
+from flask import Flask, render_template, request
 from aplicacoes import *
+from flask import redirect
+from templates import *
 
 app = Flask(__name__)
 
-@app.route('/home')
+@app.route('/login' , methods=['GET','POST'])
 def index():
-    return home()
+    if request.method == 'POST':
+        user = request.form['login']
+        senha = request.form['senha']
+        return acesso(user, senha)
+    return render_template('login.html') 
+       
 
 @app.route('/aplication/<int:x>/<int:y>/')
 def aplicativo(x,y):
-
      return program(x,y)
  
 @app.route('/aplication/par_impar/<int:n>/')
 def par_ou_impar(n):
     return par_impar(n)
 
-@app.route('/about')
-def info():
-    return render_template('about.html')
-
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', debug=True)
+    app.run(debug=True)
