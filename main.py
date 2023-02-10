@@ -5,7 +5,7 @@ from templates import *
 
 app = Flask(__name__)
 
-@app.route('/login' , methods=['GET','POST'])
+@app.route('/' , methods=['GET','POST'])
 def index():
     if request.method == 'POST':
         user = request.form['login']
@@ -13,6 +13,12 @@ def index():
         return acesso(user, senha)
     return render_template('login.html') 
        
+
+@app.route('/programlibrary' , methods=['GET', 'POST'])
+def programLib():
+    if request.method == 'POST':
+        return render_template('programs.html')
+    
 
 @app.route('/aplication/<int:x>/<int:y>/')
 def aplicativo(x,y):

@@ -1,3 +1,4 @@
+from flask import render_template
 def program(x,y):
     if (x<=10 or x>=0) and (x<10 and y>=0):
         
@@ -15,7 +16,7 @@ def acesso(user, senha):
     login = 'glauco'
     password = '123'
     if user == login and senha == password:
-        return 'Seja bem vindo'
+        return render_template('programs.html')
     else:
         return 'Login ou senha inválidos'    
 
