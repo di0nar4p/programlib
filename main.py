@@ -11,12 +11,12 @@ def index():
         user = request.form['login']
         senha = request.form['senha']
         return acesso(user, senha)
-    return render_template('login.html') 
+    return render_template('login.html')
        
 
 @app.route('/programlibrary' , methods=['GET', 'POST'])
 def programLib():
-    if request.method == 'POST':
+    if request.method == 'GET':
         return render_template('programs.html')
     
 

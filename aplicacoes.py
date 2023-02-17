@@ -1,4 +1,5 @@
-from flask import render_template
+from flask import url_for
+from flask import redirect
 def program(x,y):
     if (x<=10 or x>=0) and (x<10 and y>=0):
         
@@ -16,7 +17,7 @@ def acesso(user, senha):
     login = 'glauco'
     password = '123'
     if user == login and senha == password:
-        return render_template('programs.html')
+        return redirect(url_for('programLib'))
     else:
         return 'Login ou senha inválidos'    
 
